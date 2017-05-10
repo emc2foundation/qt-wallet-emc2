@@ -9,13 +9,13 @@ DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
 
-BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1j/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1j
+BOOST_LIB_SUFFIX=-mgw53-mt-d-1_63
+BOOST_INCLUDE_PATH=C:/deps/boost_1_63_0
+BOOST_LIB_PATH=C:/deps/boost_1_63_0/stage/lib
+BDB_INCLUDE_PATH=C:/deps/db-5.0.32.NC/build_unix
+BDB_LIB_PATH=C:/deps/db-5.0.32.NC/build_unix
+OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.2k/include
+OPENSSL_LIB_PATH=C:/deps/openssl-1.0.2k
 MINIUPNPC_INCLUDE_PATH=C:/deps/
 MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
 QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
@@ -24,7 +24,9 @@ QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
 # use: qmake BOOST_LIB_SUFFIX=-mt
 # for boost thread win32 with _win32 sufix
 # use: BOOST_THREAD_LIB_SUFFIX=_win32-...
-# or when linking against a specific BerkelyDB version: BDB_LIB_SUFFIX=-4.8
+# or when linking against a specific BerkelyDB version: BDB_LIB_SUFFIX=-5.0
+
+#BDB_LIB_SUFFIX=-5.0
 
 # Dependency library locations can be customized with:
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
