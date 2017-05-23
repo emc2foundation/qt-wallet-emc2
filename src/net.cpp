@@ -1082,10 +1082,14 @@ void ThreadMapPort()
 #ifndef UPNPDISCOVER_SUCCESS
     /* miniupnpc 1.5 */
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0);
-#else
+#elif MINIUPNPC_API_VERSION < 14
     /* miniupnpc 1.6 */
     int error = 0;
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, &error);
+#else
+    /* miniupnpc 1.9.20150730 */
+    int error = 0;
+    devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, 2, &error);
 #endif
 
     struct UPNPUrls urls;
@@ -1192,13 +1196,13 @@ void MapPort(bool)
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetDNSSeed[][2] = {
-    {"einsteinium.org", "dnsseed.einsteinium.org"},
+    {"emc2.foundation", "dnsseeder01.emc2.foundation"},
+	{"backup.emc2.foundation", "dnsseeder02.emc2.foundation"},
     {NULL, NULL}
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-    {"einsteiniumtools.com", "testnet-seed.einsteiniumtools.com"},
-    {"weminemnc.com", "testnet-seed.weminemnc.com"},
+    {"test.emc2.foundation", "dnsseedertest01.emc2.foundation"},
     {NULL, NULL}
 };
 
